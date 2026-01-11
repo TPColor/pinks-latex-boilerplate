@@ -1,0 +1,1 @@
+# Pinks-LaTeX-Boilerplate
