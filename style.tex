@@ -1,0 +1,329 @@
+% Hi. This part is made by Pink. Please credit me here if you are to use this.
+% https://github.com/TPColor/pinks-latex-boilerplate
+
+% define colors
+\definecolor{wisteria}{HTML}{C9A0DC}
+
+
+% definition styles
+
+% black
+\mdfdefinestyle{mddefbox}{
+    %roundcorner=10pt,
+    linewidth=1pt,
+    skipabove=12pt,
+    skipbelow=2pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=black,
+    nobreak=true,
+    backgroundcolor=black!5,
+    shadow=true,
+    shadowsize=6pt,
+    shadowcolor=black!30,
+}
+\declaretheoremstyle[
+    headfont=\sffamily\bfseries\color{black},
+    mdframed={style=mddefbox},
+    headpunct={\\[3pt]},
+    postheadspace={0pt}
+]{defstyle}
+
+% teal
+\mdfdefinestyle{mdpropbox}{
+    roundcorner=10pt,
+    linewidth=1pt,
+    skipabove=2pt,
+    skipbelow=2pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=Teal,
+    nobreak=true,
+    backgroundcolor=Teal!5,
+    shadow=true,
+    shadowsize=6pt,
+    shadowcolor=black!30
+}
+\declaretheoremstyle[
+    headfont=\sffamily\bfseries\color{Teal},
+    mdframed={style=mdpropbox},
+    headpunct={\\[3pt]},
+    postheadspace={0pt}
+]{propstyle}
+
+% wisteria
+\mdfdefinestyle{mdlemstyle}{
+    roundcorner=10pt,
+    linewidth=1.5pt,
+    skipabove=2pt,
+    skipbelow=2pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=wisteria,
+    nobreak=true,
+    backgroundcolor=wisteria!15,
+    shadow=true,
+    shadowsize=6pt,
+    shadowcolor=black!30
+}
+\declaretheoremstyle[
+    headfont=\sffamily\bfseries\color{wisteria!95!black},
+    mdframed={style=mdlemstyle},
+    headpunct={\\[3pt]},
+    postheadspace={0pt}
+]{lemstyle}
+
+% magenta
+\mdfdefinestyle{mdthmbox}{
+    roundcorner=10pt,
+    linewidth=2pt,
+    skipabove=12pt,
+    skipbelow=2pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=magenta,
+    nobreak=true,
+    backgroundcolor=magenta!10,
+    shadow=true,
+    shadowsize=6pt,
+    shadowcolor=black!30,
+}
+\declaretheoremstyle[
+    headfont=\sffamily\bfseries\color{magenta},
+    mdframed={style=mdthmbox},
+    headpunct={\\[3pt]},
+    postheadspace={0pt}
+]{thmstyle}
+
+% orange
+\mdfdefinestyle{mdexbox}{
+    %roundcorner=10pt,
+    linewidth=1pt,
+    skipabove=12pt,
+    skipbelow=2pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=RawSienna,
+    nobreak=true,
+    backgroundcolor=Salmon!5,
+    shadow=true,
+    shadowsize=6pt,
+    shadowcolor=black!30,
+}
+\declaretheoremstyle[
+    headfont=\sffamily\bfseries\color{RawSienna},
+    mdframed={style=mdexbox},
+    headpunct={\\[3pt]},
+    postheadspace={0pt}
+]{exstyle}
+
+% curve lazy (wisteria aka pastel purple)
+\mdfdefinestyle{mdcurvelazybox}{
+    roundcorner=10pt,
+    linewidth=1pt,
+    skipabove=12pt,
+    skipbelow=2pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=LimeGreen,
+    nobreak=true,
+    backgroundcolor=LimeGreen!5,
+    shadow=true,
+    shadowsize=6pt,
+    shadowcolor=black!30,
+}
+\declaretheoremstyle[
+    headfont=\sffamily\bfseries\color{LimeGreen},
+    mdframed={style=mdcurvelazybox},
+    headpunct={\\[3pt]},
+    postheadspace={0pt}
+]{curvelazystyle}
+
+% brick lazy (wisteria aka pastel purple)
+\mdfdefinestyle{mdbricklazybox}{
+    %roundcorner=10pt,
+    linewidth=1pt,
+    skipabove=12pt,
+    skipbelow=2pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=LimeGreen,
+    nobreak=true,
+    backgroundcolor=LimeGreen!5,
+    shadow=true,
+    shadowsize=6pt,
+    shadowcolor=black!30,
+}
+\declaretheoremstyle[
+    headfont=\sffamily\bfseries\color{LimeGreen},
+    mdframed={style=mdbricklazybox},
+    headpunct={\\[3pt]},
+    postheadspace={0pt}
+]{bricklazystyle}
+
+% fuchsia
+\mdfdefinestyle{mdprobbox}{
+    roundcorner=10pt,
+    linewidth=1.5pt,
+    skipabove=12pt,
+    skipbelow=2pt,
+    innertopmargin=9pt,
+    innerbottommargin=9pt,
+    linecolor=Fuchsia!50!Red!90!black,
+    nobreak=true,
+    backgroundcolor=PeachPuff!25,
+    shadow=true,
+    shadowsize=6pt,
+    shadowcolor=black!30,
+    frametitleaboveskip=8pt,
+    frametitlebelowskip=8pt,
+    frametitlebackgroundcolor=Fuchsia!50!Red!90!black,
+    frametitlefont=\bfseries\sffamily\color{PeachPuff!25},
+    frametitlerule=true
+}
+
+
+% environment styles for basic boxes
+\tcbset{
+  subproblem box/.style={
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    colback=PeachPuff!25,
+    borderline west={3pt}{0pt}{Fuchsia!50!Red!90!black},
+    before skip=6pt,
+    after skip=6pt,
+    left=10pt,
+    right=10pt,
+    breakable
+    },
+%
+  subsubproblem box/.style={
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    colback=PeachPuff!25,
+    % borderline west={3pt}{0pt}{Fuchsia!50!Red!90!black},
+    before skip=6pt,
+    after skip=6pt,
+    left=10pt,
+    right=10pt,
+    breakable
+    },
+%
+  observation box/.style={
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    colback=wisteria!15,
+    coltext=wisteria!95!black,
+    borderline west={3pt}{0pt}{wisteria},
+    before skip=6pt,
+    after skip=6pt,
+    left=10pt,
+    right=10pt,
+    breakable
+    },
+%
+  claim box/.style={
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    colback=pink!70!magenta!15,
+    coltext=pink!60!magenta,
+    borderline west={3pt}{0pt}{pink!70!magenta},
+    before skip=6pt,
+    after skip=6pt,
+    left=10pt,
+    right=10pt,
+    breakable
+    },
+%
+  remark box/.style={
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    colback=DeepSkyBlue!5,
+    coltext=black,
+    borderline west={3pt}{0pt}{DeepSkyBlue},
+    before skip=6pt,
+    after skip=6pt,
+    left=10pt,
+    right=10pt,
+    breakable
+    },
+%
+  corollary box/.style={
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    colback=magenta!10,
+    coltext=black,
+    borderline west={3pt}{0pt}{magenta},
+    before skip=6pt,
+    after skip=6pt,
+    left=10pt,
+    right=10pt,
+    breakable
+    },
+%
+  remark box/.style={
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    colback=DeepSkyBlue!5,
+    coltext=black,
+    borderline west={3pt}{0pt}{DeepSkyBlue},
+    before skip=6pt,
+    after skip=6pt,
+    left=10pt,
+    right=10pt,
+    breakable
+    },
+%
+  domino box/.style={
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    colback=black!5,
+    coltext=black,
+    borderline west={3pt}{0pt}{black},
+    before skip=6pt,
+    after skip=6pt,
+    left=10pt,
+    right=10pt,
+    breakable
+    },
+}
+
+
+% theorem styles for basic boxes
+
+% corollary
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{magenta},
+	bodyfont=\normalfont,
+	headpunct={\\[3pt]},
+]{corostyle}
+
+% remark
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{DeepSkyBlue},
+	bodyfont=\normalfont,
+	headpunct={\\[3pt]},
+]{remstyle}
+
+% domino
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{black},
+	bodyfont=\normalfont,
+	headpunct={\\[3pt]},
+]{dominostyle}

@@ -1,0 +1,76 @@
+% Hi. This part is made by Pink. Please credit me here if you are to use this.
+% https://github.com/TPColor/pinks-latex-boilerplate
+
+\usepackage{amsmath, amssymb, amsthm} % basic packages
+\usepackage{xparse}
+\usepackage[dvipsnames,svgnames,table]{xcolor} % cool colors n other shit
+\usepackage[most]{tcolorbox} % simple boxes
+\usepackage[framemethod=TikZ]{mdframed} % framed boxes
+\usetikzlibrary{shadows} % shadows no shit
+\usepackage[margin=1in]{geometry} % margins
+\usepackage{graphicx} % Required for inserting images
+\usepackage{thmtools}
+\usepackage{etoolbox} % for \pretocmd
+
+\usepackage{mathdots} % for ascending diagonal dots
+\usepackage{wasysym} % for lightning (contradiction)
+\newcommand{\whenever}{\mathrel{\reflectbox{$\implies$}}} % converse
+\usepackage{upgreek} % need uptau
+
+\input{style} 
+
+% fancy "definition" environments
+\declaretheorem[style=defstyle,name=Definition,numberwithin=section]{definition}
+\declaretheorem[style=defstyle,name=Definition,numbered=no]{definition*} % non-numbered definitions
+\declaretheorem[style=propstyle,name=Proposition,sibling=definition]{proposition}
+\declaretheorem[style=lemstyle,name=Lemma,sibling=definition]{lemma}
+\declaretheorem[style=thmstyle,name=Theorem,sibling=definition]{theorem}
+\declaretheorem[style=exstyle,name=Example,sibling=definition]{example}
+\declaretheorem[style=curvelazystyle,name=Curve Placeholder,sibling=definition]{curve}
+\declaretheorem[style=bricklazystyle,name=Brick Placeholder,sibling=definition]{brick}
+
+% basic "remark" environments
+\declaretheorem[style=remstyle,name=Remark,sibling=definition]{remark}
+\tcolorboxenvironment{remark}{remark box}
+\declaretheorem[style=remstyle,name=Fact,sibling=definition]{fact}
+\tcolorboxenvironment{fact}{remark box}
+\declaretheorem[style=corostyle,name=Corollary to Theorem,sibling=definition]{corollary}
+\tcolorboxenvironment{corollary}{corollary box}
+\pretocmd{\corollary}{\addtocounter{corollary}{-1}}{}{} % decrement counter of corollary specifically
+\declaretheorem[style=corostyle,name=Corollary to Proposition,sibling=definition]{corollaryprop}
+\tcolorboxenvironment{corollaryprop}{corollary box}
+\pretocmd{\corollaryprop}{\addtocounter{corollaryprop}{-1}}{}{} % decrement counter of corollary specifically
+\declaretheorem[style=dominostyle,name=Domino,sibling=definition]{domino}
+\tcolorboxenvironment{domino}{domino box}
+
+% problem environments
+\newenvironment{problem}[1]{
+    \begin{mdframed}[style=mdprobbox, frametitle={#1}]
+}{
+    \end{mdframed}
+}
+\newtcolorbox{subproblem}[1][]{subproblem box, before upper={\textbf{#1}}}
+\newtcolorbox{subsubproblem}[1][]{subsubproblem box, before upper={\textbf{#1}}}
+
+% solution environments
+\newcommand{\magentasquare}{\textcolor{magenta}{\(\Box\)}} % magenta qed
+\newcommand{\moneyqed}{\hfill\includegraphics[height=2ex]{media/money mouth emoji.png}} % money mouth qed
+\newenvironment{solution}[1][Solution]{
+  \par\noindent\textit{#1.} \ignorespaces
+}{
+  \moneyqed\par 
+}
+
+% claim environments
+\newtcolorbox{observation}[1]{
+    observation box,
+    before upper={
+        \sffamily\bfseries#1\textbf{ --- }\color{black}\normalfont
+    }
+}
+\newtcolorbox{claim}[1]{
+    claim box,
+    before upper={
+        \sffamily\bfseries#1\textbf{ --- }\color{black}\normalfont
+    }
+}
